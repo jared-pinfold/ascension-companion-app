@@ -1,9 +1,9 @@
 {
-  "name": "boilerplate-react",
+  "name": "ascension-companion-app",
   "type": "module",
-  "version": "0.2.0",
-  "description": "React!",
-  "repository": "https://github.com/dev-academy-challenges/react-boilerplate.git",
+  "version": "1.0.0",
+  "description": "Companion app for the Ascension digital card game",
+  "repository": "https://github.com/jared-pinfold/ascension-companion-app",
   "main": "server/index.js",
   "scripts": {
     "dev": "vite",
@@ -18,7 +18,7 @@
       "bundle.js"
     ]
   },
-  "author": "Dev Academy Aotearoa",
+  "author": "Jared Pinfold",
   "license": "ISC",
   "devDependencies": {
     "@devacademy/eslint-config": "^1.10.1",
