@@ -1,5 +1,5 @@
-import ContentWrapper from "./ContentWrapper"
-import Header from "./Header"
+import ContentWrapper from './ContentWrapper'
+import Header from './Header'
 
 function App() {
   return (

@@ -43,27 +43,37 @@ function getEspansionsToUse(n: number, expansions: IExpansions) {
     { name: 'promo5', code: 'Promo5', grid: 19 },
     { name: 'promo6', code: 'Promo6', grid: 20 },
   ]
-  const availableCoreSets = shuffleArray(coreSets.reduce((returnArray: ExpansionObject[], currentSet: ExpansionObject) => {
-    if (expansions[currentSet.name as keyof IExpansions] === true) {
-      return [...returnArray, currentSet]
-    } else {
-      return returnArray
-    }
-  }, [] )) //remove sets that are not selected, then return a shuffled array
-  const availablePromoSets = promoSets.reduce((returnArray: ExpansionObject[], currentSet: ExpansionObject) => {
-    if (expansions[currentSet.name as keyof IExpansions] === true) {
-      return [...returnArray, currentSet]
-    } else {
-      return returnArray
-    }
-  }, [] ) //remove sets that are not selected
+  const availableCoreSets = shuffleArray(
+    coreSets.reduce(
+      (returnArray: ExpansionObject[], currentSet: ExpansionObject) => {
+        if (expansions[currentSet.name as keyof IExpansions] === true) {
+          return [...returnArray, currentSet]
+        } else {
+          return returnArray
+        }
+      },
+      [],
+    ),
+  ) //remove sets that are not selected, then return a shuffled array
+  const availablePromoSets = promoSets.reduce(
+    (returnArray: ExpansionObject[], currentSet: ExpansionObject) => {
+      if (expansions[currentSet.name as keyof IExpansions] === true) {
+        return [...returnArray, currentSet]
+      } else {
+        return returnArray
+      }
+    },
+    [],
+  ) //remove sets that are not selected
 
   // select one core set
   const compulsoryCoreSet = availableCoreSets.splice(0, 1)[0]
 
   //then the remaining sets are randomly selected
-  const remainingSets = shuffleArray([...availableCoreSets, ...availablePromoSets]).slice(0, n - 1)
+  const remainingSets = shuffleArray([
+    ...availableCoreSets,
+    ...availablePromoSets,
+  ]).slice(0, n - 1)
 
   return [compulsoryCoreSet, ...remainingSets]
 }
-

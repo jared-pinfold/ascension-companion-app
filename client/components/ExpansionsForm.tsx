@@ -1,5 +1,3 @@
 export default function ExpansionsForm() {
-  return (
-    <form></form>
-  )
+  return <form></form>
 }
