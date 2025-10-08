@@ -10,3 +10,10 @@ Maybe I'll add some more functionality later
  - `npm i`
  - `npm run dev`
  - Browse to `http://localhost:5173/`
+
+## Feature Roadmap
+
+- [x] Randomises sets (v1.0.0)
+- [ ] Shows selected sets in grid format to match the game UI (v1.1.x)
+- [ ] Form to select which sets you own (v2.0.0)
+- [ ] Styling overhaul (v2.1.0)
